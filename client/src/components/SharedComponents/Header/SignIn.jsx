@@ -26,6 +26,7 @@ class SignIn extends React.Component {
                     localStorage.setItem('auth-sky', data.token)
                     localStorage.setItem('userId', data.userId)
                     this.props.setUser(data.userId)
+                    window.location.reload()
                 }
             })
     }
@@ -76,6 +77,7 @@ class SignIn extends React.Component {
                                 />
                                 <Button type='submit' className='dialog_button'  > Log In </Button>
                             </form>
+                            <Button type='submit' className='dialog_button' onClick={this.signUpStatus} > Sign Up </Button>
                         </div > :
                         <SignUp signUpStatus={this.signUpStatus} setUser={this.props.setUser} />
                 }
