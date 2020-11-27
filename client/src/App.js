@@ -52,7 +52,7 @@ class App extends React.Component {
         <Header currentUser={currentUser} userId={userId} setUser={this.setUser} />
         <Switch>
           <Route exact path='/' render={() => <HomePage getFlightsData={this.getFlightsData} />} />
-          <Route exact path='/search' render={() => <SearchPage flightsData={flightsData} getFlightsData={this.getFlightsData} userId={userId} />} />
+          <Route exact path='/search' render={() => <SearchPage flightsData={flightsData} getFlightsData={this.getFlightsData} userId={userId} setUser={this.setUser} />} />
           <Route path='/searcheverywhere' render={() => <SearchEveryWhere userId={userId} />} />
           <Route path='/profile' render={() => userId ?
             <UserProfile name={this.state.currentUser} email={this.state.email} userId={userId} />

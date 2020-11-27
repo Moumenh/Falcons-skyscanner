@@ -2,7 +2,7 @@ import React from 'react'
 import SelectDialog from './SelectDialog'
 import MaxWidthDialog from '../../SharedComponents/Header/MaxWidthDialog'
 
-const TicketComponent = ({ flight, Carriers, Places, userId }) => {
+const TicketComponent = ({ flight, Carriers, Places, userId,setUser }) => {
     const [success, setsuccess] = React.useState(true);
     const getName = (id, arr) => {
         let name = ''
@@ -92,7 +92,7 @@ const TicketComponent = ({ flight, Carriers, Places, userId }) => {
                     userId ?
                         <SelectDialog setsuccess={setsuccess} success={success} addTicket={addTicket} userTicket={userTicket}>Select</SelectDialog>
                         : <div>
-                            <MaxWidthDialog placeholder="Select"/>
+                            <MaxWidthDialog setUser={setUser} placeholder="Select"/>
                         </div>
                 }
             </div>
