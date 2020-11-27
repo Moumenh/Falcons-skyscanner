@@ -47,7 +47,7 @@ class SearchComponent extends React.Component {
         {
           flightsData.Quotes ?
             flightsData.Quotes.map((flight, id) => {
-              return <TicketComponent key={id} flight={flight} Carriers={flightsData.Carriers} Places={flightsData.Places} userId={this.props.userId} />
+              return <TicketComponent key={id} flight={flight} Carriers={flightsData.Carriers} Places={flightsData.Places} userId={this.props.userId} setUser={this.props.setUser} />
             }) : <div><h3>Look for flights to anywhere at anytime</h3></div>
         }
       </div>
